@@ -6,6 +6,8 @@ namespace Persistence
 {
     public class DataContext : DbContext
     {
+        //Use below command for adding migration
+        //dotnet ef migrations add "ActivityEntityAdded" -p Persistence/ -s API/
         public DataContext(DbContextOptions options) : base(options)
         {
 
@@ -17,5 +19,6 @@ namespace Persistence
         }
 
         public DbSet<Value> Values { get; set; }
+        public DbSet<Activity> Activities { get; set; }
     }
 }
